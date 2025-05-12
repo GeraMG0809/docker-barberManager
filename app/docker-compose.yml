@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: barber_manager_app
+    ports:
+      - "5050:5050"
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=barber_manager_db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DB=barber_manager_db
+
+  db:
+    image: mysql:5.7
+    container_name: barber_manager_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: barber_manager_db
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+volumes:
+  db_data:
