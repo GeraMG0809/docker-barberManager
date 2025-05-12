@@ -32,10 +32,6 @@ docker-barberManager/
 ├── docker-compose.yml # Orquestador de servicios
 └── README.md # Este archivo
 
-yaml
-Copiar
-Editar
-
 ---
 
 ## ⚙️ Instalación con Docker
@@ -49,9 +45,6 @@ cd docker-barberManager
 Copia el archivo backup-barberManager.sql al directorio ./sql/.
 
 3. Construir e iniciar los servicios
-bash
-Copiar
-Editar
 sudo docker-compose up --build
 Esto levantará dos contenedores:
 
@@ -63,10 +56,6 @@ El puerto por defecto de la aplicación es 5050.
 
 4. Accede a la aplicación
 Abre tu navegador y visita:
-
-arduino
-Copiar
-Editar
 http://localhost:5050
 🧪 Base de datos
 El contenedor barber_manager_db utiliza MySQL 5.7 por compatibilidad con las colaciones y definiciones del respaldo.
@@ -78,9 +67,6 @@ El nombre de la base de datos dentro del contenedor es: barber_manager_db.
 📤 Importar el respaldo manualmente (opcional)
 En caso de que necesites importar el respaldo manualmente:
 
-bash
-Copiar
-Editar
 # Copia el archivo al contenedor
 docker cp sql/backup-barberManager.sql barber_manager_db:/backup-barberManager.sql
 
